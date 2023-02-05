@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -122,11 +123,57 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ),
       ),
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.only(
+          right: 30,
+          left: 30,
+        ),
+        child: Align(
+          widthFactor: 0.0,
+          heightFactor: 0.0,
+          alignment: Alignment(1.0, 1.5),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: GNav(
+                onTabChange: (value) {
+                  print(value);
+                },
+                tabBackgroundGradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Color(0xffe90d65), Color(0xffac0087)],
+              ),
+                gap: 8,
+                padding: EdgeInsets.all(10),
+                tabMargin: EdgeInsets.all(10),
+                backgroundColor: Colors.grey.shade200,
+                color: Colors.grey.shade800,
+                activeColor: Colors.white,
+                tabBackgroundColor: Colors.grey.shade300,
+                tabs: [
+                  GButton(
+                    icon: Icons.info,
+                    text: 'Info',
+                  ),
+                  GButton(
+                    icon: Icons.location_on_outlined,
+                    text: 'Address',
+                  ),
+                  GButton(
+                    icon: Icons.feed_sharp,
+                    text: 'Documents',
+                  ),
+                ],
+              )),
+        ),
+      ),
       body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 25,
-              horizontal: 25,
+            padding: const EdgeInsets.only(
+              bottom: 0,
+              top: 25,
+              left: 25,
+              right: 25,
             ),
             child: SingleChildScrollView(
               child: Form(
@@ -1127,6 +1174,9 @@ class _DashboardPageState extends State<DashboardPage> {
                             ),
                           ),
                         ),
+                      ),
+                      SizedBox(
+                        height: 120,
                       ),
                     ],
                   )),
