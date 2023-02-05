@@ -24,15 +24,15 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: Size.fromHeight(45.0),
           child: Container(
-            padding: EdgeInsets.only(left: 20, bottom: 15),
+            padding: EdgeInsets.only(left: 20, bottom: 3),
             child: Row(
               children: [
                 Stack(
                   children: [
                     CircleAvatar(
-                      radius: 30,
+                      radius: 28,
                       backgroundColor: Colors.white,
                       backgroundImage:
                       AssetImage('images/appbar_circle_image.png'),
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.only(
-          top: 281,
+          top: 250,
           bottom: 50,
           left: 25,
           right: 25,

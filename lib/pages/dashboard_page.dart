@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -15,13 +14,10 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     bool is_checked = false;
-    const mockupHeight = 896;
     const mockupWidth = 414;
     const inputBGStrokeColor = Color.fromRGBO(223, 223, 223, 1);
-    const textColor = Color.fromRGBO(81, 81, 81, 1);
     const textColorLight = Color.fromRGBO(175, 175, 175, 1);
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     final textScaleFactor = width / mockupWidth;
     String _isshuePlaceValue = 'Isshue Place';
 
@@ -39,15 +35,15 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: Size.fromHeight(45.0),
           child: Container(
-            padding: EdgeInsets.only(left: 20, bottom: 15),
+            padding: EdgeInsets.only(left: 20, bottom: 3),
             child: Row(
               children: [
                 Stack(
                   children: [
                     CircleAvatar(
-                      radius: 30,
+                      radius: 28,
                       backgroundColor: Colors.white,
                       backgroundImage:
                       AssetImage('images/appbar_circle_image.png'),
@@ -179,6 +175,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Form(
                   child: Column(
                     children: [
+                      //Passport No.............................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -213,9 +210,9 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your Passport Number!";
                           } else if (!match) {
-                            return "Name must contain letters only !";
+                            return "Must contain number only !";
                           }
                           return null;
                         },
@@ -223,6 +220,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Issuing Country........................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -257,7 +255,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your Country Name!";
                           } else if (!match) {
                             return "Name must contain letters only !";
                           }
@@ -267,6 +265,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84 / mockupWidth * width,
                       ),
+                      //Issue Date...........................................
                       Row(
                         children: [
                           Expanded(
@@ -409,6 +408,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Issue Place............................................
                       SizedBox(
                         height: 38.16,
                         child: Material(
@@ -428,7 +428,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               children: <Widget>[
                                 Expanded(
                                   child: Text(
-                                    _isshuePlaceValue,
+                                    'Issue Place',
                                     softWrap: false,
                                     textScaleFactor: textScaleFactor,
                                     // style: bodyRobotoTextStyle,
@@ -454,6 +454,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Expiry Date..............................................
                       Row(
                         children: [
                           Expanded(
@@ -604,6 +605,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Mobile Number.........................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -638,9 +640,9 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your Mobile Number!";
                           } else if (!match) {
-                            return "Name must contain letters only !";
+                            return "Must contain number only !";
                           }
                           return null;
                         },
@@ -649,6 +651,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Email..................................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -680,20 +683,21 @@ class _DashboardPageState extends State<DashboardPage> {
                           hintText: 'Email',
                           hintStyle: TextStyle(fontSize: 12),
                         ),
-                        validator: (text) {
-                          var match = alphanumeric.hasMatch(text!);
-                          if (text.isEmpty) {
-                            return "Enter your Full Name!";
-                          } else if (!match) {
-                            return "Name must contain letters only !";
-                          }
-                          return null;
-                        },
+                        // validator: (text) {
+                        //   var match = alphanumeric.hasMatch(text!);
+                        //   if (text.isEmpty) {
+                        //     return "Enter your Email!";
+                        //   } else if (!match) {
+                        //     return "Name must contain letters only !";
+                        //   }
+                        //   return null;
+                        // },
                         autovalidateMode: AutovalidateMode.onUserInteraction,
                       ),
                       SizedBox(
                         height: 12.84,
                       ),
+                      //National ID No.............................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -728,9 +732,9 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your National ID No!";
                           } else if (!match) {
-                            return "Name must contain letters only !";
+                            return "Must contain number only !";
                           }
                           return null;
                         },
@@ -739,6 +743,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Full Name..............................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -784,6 +789,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Fathers/Husband Name....................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -818,7 +824,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your Fathers/Husband Name!";
                           } else if (!match) {
                             return "Name must contain letters only !";
                           }
@@ -829,6 +835,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 3,
                       ),
+                      //Relation................................................
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -876,6 +883,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 3,
                       ),
+                      //Mothers Name............................................
                       TextFormField(
                         keyboardType: TextInputType.name,
                         decoration: InputDecoration(
@@ -910,7 +918,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         validator: (text) {
                           var match = alphanumeric.hasMatch(text!);
                           if (text.isEmpty) {
-                            return "Enter your Full Name!";
+                            return "Enter your Mother Name!";
                           } else if (!match) {
                             return "Name must contain letters only !";
                           }
@@ -921,6 +929,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Date of Birth...........................................
                       Row(
                         children: [
                           Expanded(
@@ -1071,6 +1080,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 12.84,
                       ),
+                      //Salutation................................................
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -1131,6 +1141,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         height: 53,
                       ),
+                      //Button..............................................
                       Center(
                         child: InkWell(
                           onTap: () {},

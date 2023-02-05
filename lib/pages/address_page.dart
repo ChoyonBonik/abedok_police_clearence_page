@@ -13,16 +13,11 @@ class _AddressPageState extends State<AddressPage> {
   @override
   Widget build(BuildContext context) {
     bool is_checked = false;
-    const mockupHeight = 896;
     const mockupWidth = 414;
     const inputBGStrokeColor = Color.fromRGBO(223, 223, 223, 1);
-    const textColor = Color.fromRGBO(81, 81, 81, 1);
-    const textColorLight = Color.fromRGBO(175, 175, 175, 1);
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
     final textScaleFactor = width / mockupWidth;
-    final alphanumeric =
-        RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
+    final alphanumeric = RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
     return Scaffold(
       appBar: AppBar(
         flexibleSpace: Container(
@@ -35,15 +30,15 @@ class _AddressPageState extends State<AddressPage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(40.0),
+          preferredSize: Size.fromHeight(45.0),
           child: Container(
-            padding: EdgeInsets.only(left: 20, bottom: 15),
+            padding: EdgeInsets.only(left: 20, bottom: 3),
             child: Row(
               children: [
                 Stack(
                   children: [
                     CircleAvatar(
-                      radius: 30,
+                      radius: 28,
                       backgroundColor: Colors.white,
                       backgroundImage:
                           AssetImage('images/appbar_circle_image.png'),
@@ -175,6 +170,7 @@ class _AddressPageState extends State<AddressPage> {
             child: Form(
               child: Column(
                 children: [
+                  //Emergency Contact............................................
                   Text(
                     "Emergency Contact (As Per Passport)",
                     style: TextStyle(
@@ -187,6 +183,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //District..................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -232,6 +229,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Village/Town/Road/House/Flat.................................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -263,19 +261,20 @@ class _AddressPageState extends State<AddressPage> {
                       hintText: 'Village/Town/Road/House/Flat',
                       hintStyle: TextStyle(fontSize: 12),
                     ),
-                    validator: (text) {
-                      var match = alphanumeric.hasMatch(text!);
-                      if (text.isEmpty) {
-                        return "Enter your Full Name!";
-                      } else if (!match) {
-                        return "Name must contain letters only !";
-                      }
-                      return null;
-                    },
+                    // validator: (text) {
+                    //   var match = alphanumeric.hasMatch(text!);
+                    //   if (text.isEmpty) {
+                    //     return "Enter your Address!";
+                    //   } else if (!match) {
+                    //     return "Name must contain letters only !";
+                    //   }
+                    //   return null;
+                    // },
                   ),
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Thana...................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -321,6 +320,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Post Office................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -366,6 +366,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Postal Code..................................................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -400,9 +401,9 @@ class _AddressPageState extends State<AddressPage> {
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
                       if (text.isEmpty) {
-                        return "Enter your Full Name!";
+                        return "Enter your Postal Code";
                       } else if (!match) {
-                        return "Name must contain letters only !";
+                        return "Must contain number only !";
                       }
                       return null;
                     },
@@ -410,6 +411,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Permanent Address.........................................
                   SizedBox(
                     height: 24,
                     child: Row(
@@ -452,6 +454,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //District..................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -497,6 +500,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Village/Thana/Road/House/Flat..............................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -528,19 +532,20 @@ class _AddressPageState extends State<AddressPage> {
                       hintText: 'Village/Town/Road/House/Flat',
                       hintStyle: TextStyle(fontSize: 12),
                     ),
-                    validator: (text) {
-                      var match = alphanumeric.hasMatch(text!);
-                      if (text.isEmpty) {
-                        return "Enter your Full Name!";
-                      } else if (!match) {
-                        return "Name must contain letters only !";
-                      }
-                      return null;
-                    },
+                    // validator: (text) {
+                    //   var match = alphanumeric.hasMatch(text!);
+                    //   if (text.isEmpty) {
+                    //     return "Enter your Full Name!";
+                    //   } else if (!match) {
+                    //     return "Name must contain letters only !";
+                    //   }
+                    //   return null;
+                    // },
                   ),
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Thana.....................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -586,6 +591,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Post Office...............................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -631,6 +637,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Postal Code..................................................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -665,9 +672,9 @@ class _AddressPageState extends State<AddressPage> {
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
                       if (text.isEmpty) {
-                        return "Enter your Full Name!";
+                        return "Enter your Postal Code!";
                       } else if (!match) {
-                        return "Name must contain letters only !";
+                        return "Must contain number only !";
                       }
                       return null;
                     },
@@ -675,6 +682,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Present Address...............................................
                   SizedBox(
                     height: 24,
                     child: Row(
@@ -717,6 +725,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //District..................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -762,6 +771,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Village/Town/Road/House/Flat...............................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -793,19 +803,20 @@ class _AddressPageState extends State<AddressPage> {
                       hintText: 'Village/Town/Road/House/Flat',
                       hintStyle: TextStyle(fontSize: 12),
                     ),
-                    validator: (text) {
-                      var match = alphanumeric.hasMatch(text!);
-                      if (text.isEmpty) {
-                        return "Enter your Full Name!";
-                      } else if (!match) {
-                        return "Name must contain letters only !";
-                      }
-                      return null;
-                    },
+                    // validator: (text) {
+                    //   var match = alphanumeric.hasMatch(text!);
+                    //   if (text.isEmpty) {
+                    //     return "Enter your Full Name!";
+                    //   } else if (!match) {
+                    //     return "Name must contain letters only !";
+                    //   }
+                    //   return null;
+                    // },
                   ),
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Thana.....................................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -851,6 +862,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Post Office...............................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -896,6 +908,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Postal Code.................................................
                   TextFormField(
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
@@ -930,9 +943,9 @@ class _AddressPageState extends State<AddressPage> {
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
                       if (text.isEmpty) {
-                        return "Enter your Full Name!";
+                        return "Enter your Postal Code!";
                       } else if (!match) {
-                        return "Name must contain letters only !";
+                        return "Must contain nnumber only !";
                       }
                       return null;
                     },
@@ -940,6 +953,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 42.84,
                   ),
+                  //Delivery Type..............................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -985,6 +999,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 12.84,
                   ),
+                  //Delivery From..............................................
                   SizedBox(
                     height: 38.16,
                     child: Material(
@@ -1030,6 +1045,7 @@ class _AddressPageState extends State<AddressPage> {
                   SizedBox(
                     height: 50,
                   ),
+                  //Button........................................................
                   Center(
                     child: InkWell(
                       onTap: () {},
