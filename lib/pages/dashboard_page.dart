@@ -35,7 +35,7 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(45.0),
+          preferredSize: Size.fromHeight(50.0),
           child: Container(
             padding: EdgeInsets.only(left: 20, bottom: 3),
             child: Row(
@@ -93,23 +93,26 @@ class _DashboardPageState extends State<DashboardPage> {
                       SizedBox(
                         width: 50,
                       ),
-                      Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.search,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.notifications_none_rounded,
-                                color: Colors.white,
-                                size: 30,
-                              )),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.search,
+                                  size: 30,
+                                  color: Colors.white,
+                                )),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.notifications_none_rounded,
+                                  color: Colors.white,
+                                  size: 30,
+                                )),
+                          ],
+                        ),
                       )
                     ],
                   ),
