@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(45.0),
+          preferredSize: Size.fromHeight(50.0),
           child: Container(
             padding: EdgeInsets.only(left: 20, bottom: 3),
             child: Row(
@@ -82,23 +82,26 @@ class _HomePageState extends State<HomePage> {
                       SizedBox(
                         width: 50,
                       ),
-                      Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.search,
-                                size: 30,
-                                color: Colors.white,
-                              )),
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.notifications_none_rounded,
-                                color: Colors.white,
-                                size: 30,
-                              )),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.search,
+                                  size: 30,
+                                  color: Colors.white,
+                                )),
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.notifications_none_rounded,
+                                  color: Colors.white,
+                                  size: 30,
+                                )),
+                          ],
+                        ),
                       )
                     ],
                   ),
@@ -137,7 +140,12 @@ class _HomePageState extends State<HomePage> {
                   bottom: 15,
                   top: 23,
                 ),
-                child: Text('Purpose'),
+                child: Text('Purpose',
+                  style: TextStyle(
+                    color: const Color(0xffbe047d),
+                    fontFamily: "Poppins Medium",
+                  ),
+                ),
               ),
               Divider(
                 height: 0.0,
@@ -155,14 +163,32 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       Checkbox(value: is_checked, onChanged: (value) {}),
-                      Text('Abroad')
+                      Text('Abroad',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: const Color.fromRGBO(142, 142, 143, 1),
+                          fontFamily: 'Roboto Regular',
+                        ),
+                      )
                     ],
                   ),
-                  Row(
-                    children: [
-                      Checkbox(value: is_checked, onChanged: (value) {}),
-                      Text('Other     ')
-                    ],
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15),
+                    child: Row(
+                      children: [
+                        Checkbox(value: is_checked, onChanged: (value) {}),
+                        Text('Other',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: const Color.fromRGBO(142, 142, 143, 1),
+                            fontFamily: 'Roboto Regular',
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ],
               ),
