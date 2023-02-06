@@ -161,7 +161,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
       body: SafeArea(
           child: Padding(
               padding: EdgeInsets.only(
-                top: 25,
+                top: 22,
                 right: 25,
                 left: 25,
               ),

@@ -165,7 +165,7 @@ class _AddressPageState extends State<AddressPage> {
         child: Padding(
           padding: const EdgeInsets.only(
             bottom: 0,
-            top: 25,
+            top: 22,
             left: 25,
             right: 25,
           ),
