@@ -1,3 +1,5 @@
+import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
+import 'package:abedok_police_clearence_page/pages/image_upload_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -20,102 +22,61 @@ class _AddressPageState extends State<AddressPage> {
     final alphanumeric = RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
     return Scaffold(
       appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xffe90d65), Color(0xffac0087)],
-            ),
-          ),
-        ),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: Container(
-            padding: EdgeInsets.only(left: 20, bottom: 3),
-            child: Row(
-              children: [
-                Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: Colors.white,
-                      backgroundImage:
-                          AssetImage('images/appbar_circle_image.png'),
-                    ),
-                  ],
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: Container(
+          height: 40 / mockupWidth * width,
+          width: 40 / mockupWidth * width,
+          margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
+          child:
+          Card(
+            elevation: 2,
+            color: Colors.white,
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (value){
+                  return DashboardPage();
+                }));
+              },
+              child: Container(
+                margin: const EdgeInsets.only(left: 5),
+                child: const Icon(
+                  Icons.arrow_back_ios,
+                  size: 15.0,
+                  color: Colors.pink,
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Khairul Islam',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                '01746586222',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_sharp,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ))
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(9.0),
-                        child: Row(
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.search,
-                                  size: 30,
-                                  color: Colors.white,
-                                )),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.notifications_none_rounded,
-                                  color: Colors.white,
-                                  size: 30,
-                                )),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
+              ),
             ),
           ),
         ),
+        centerTitle: true,
+        title: AutoSizeText(
+          "Address Page",
+          maxLines: 1,
+          textScaleFactor: textScaleFactor,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(
+            color: Color(0xffbe047d),
+            fontSize: 17,
+            fontFamily: "Poppins SemiBold",
+          ),
+        ),
+        actions: [
+          Card(
+            margin: EdgeInsets.only(right: 20, top: 10, bottom: 10),
+            elevation: 0,
+            color: Colors.white,
+            child: InkWell(
+              onTap: (){},
+              child: Container(
+                child: Image(image: AssetImage('images/ic_notification.png'),
+                  width: 40,
+                  height: 40,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
@@ -178,8 +139,7 @@ class _AddressPageState extends State<AddressPage> {
                     "Emergency Contact (As Per Passport)",
                     style: TextStyle(
                       color: const Color(0xffbe047d),
-                      fontSize: 16,
-                      decoration: TextDecoration.underline,
+                      fontSize: 14,
                       fontFamily: "Poppins Medium",
                     ),
                   ),
@@ -262,7 +222,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -399,7 +359,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -426,7 +386,6 @@ class _AddressPageState extends State<AddressPage> {
                             style: TextStyle(
                               color: const Color(0xffbe047d),
                               fontSize: 16,
-                              decoration: TextDecoration.underline,
                               fontFamily: "Poppins Medium",
                             ),
                           ),
@@ -533,7 +492,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -670,7 +629,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12,color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -697,7 +656,6 @@ class _AddressPageState extends State<AddressPage> {
                             style: TextStyle(
                               color: const Color(0xffbe047d),
                               fontSize: 16,
-                              decoration: TextDecoration.underline,
                               fontFamily: "Poppins Medium",
                             ),
                           ),
@@ -804,7 +762,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -941,7 +899,7 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12),
+                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -1051,7 +1009,11 @@ class _AddressPageState extends State<AddressPage> {
                   //Button........................................................
                   Center(
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (value){
+                          return ImageUploadPage();
+                        }));
+                      },
                       child: Container(
                         width: 250,
                         height: 46,

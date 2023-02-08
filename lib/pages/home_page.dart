@@ -1,3 +1,6 @@
+import 'package:abedok_police_clearence_page/pages/address_page.dart';
+import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
+import 'package:abedok_police_clearence_page/pages/image_upload_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -13,102 +16,79 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     bool is_checked = false;
     return Scaffold(
-      appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [Color(0xffe90d65), Color(0xffac0087)],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70),
+        child:
+        AppBar(
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xffe90d65),
+                  Color(0xffac0087),
+                ],
+              ),
             ),
           ),
-        ),
-        bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: Container(
-            padding: EdgeInsets.only(left: 20, bottom: 3),
+          leadingWidth: 70,
+          titleSpacing: 0,
+          leading: Padding(
+            padding: const EdgeInsets.only(top:18, left: 10),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Stack(
-                  children: [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: Colors.white,
-                      backgroundImage:
-                      AssetImage('images/appbar_circle_image.png'),
-                    ),
-                  ],
+                CircleAvatar(
+                  radius: 20,
+                  backgroundImage: AssetImage('images/circle.jpg'),
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    left: 10,
-                    top: 10,
-                  ),
-                  child: Row(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Khairul Islam',
-                            style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white),
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                '01746586222',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.keyboard_arrow_down_sharp,
-                                    color: Colors.white,
-                                    size: 30,
-                                  ))
-                            ],
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 50,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(9.0),
-                        child: Row(
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.search,
-                                  size: 30,
-                                  color: Colors.white,
-                                )),
-                            IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.notifications_none_rounded,
-                                  color: Colors.white,
-                                  size: 30,
-                                )),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )
               ],
             ),
           ),
+          title: Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: InkWell(
+              onTap: () {},
+              child: Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Khairul Inslam',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "01700000000",
+                          style: TextStyle(
+                            fontSize: 11,
+                          ),
+                        ),
+                        Icon(Icons.keyboard_arrow_down),
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                children: [
+                  IconButton(icon: Icon(Icons.search_rounded), onPressed: () {}),
+                  IconButton(icon: Icon(Icons.notifications_none_outlined), onPressed: () {}),
+                ],
+              ),
+            )
+          ],
         ),
       ),
       body: Padding(
@@ -196,7 +176,11 @@ class _HomePageState extends State<HomePage> {
                 height: 15,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (value){
+                    return DashboardPage();
+                  }));
+                },
                 child: Container(
                   width: double.infinity,
                   height: 50,
