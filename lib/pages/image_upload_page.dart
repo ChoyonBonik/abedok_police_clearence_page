@@ -74,7 +74,8 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
             ),
           ),
         ],
-      ), bottomNavigationBar: Padding(
+      ),
+      bottomNavigationBar: Padding(
         padding: EdgeInsets.only(
           right: 30,
           left: 30,
