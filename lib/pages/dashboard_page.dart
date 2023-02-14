@@ -45,7 +45,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 child: const Icon(
                   Icons.arrow_back_ios,
                   size: 15.0,
-                  color: Colors.pink,
+                  color: Color(0xffbe047d),
                 ),
               ),
             ),

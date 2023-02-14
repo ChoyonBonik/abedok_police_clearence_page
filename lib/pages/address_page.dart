@@ -1008,13 +1008,15 @@ class _AddressPageState extends State<AddressPage> {
                   ),
                   //Button........................................................
                   Center(
-                    child: InkWell(
+                    child:
+                    InkWell(
                       onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (value){
                           return ImageUploadPage();
                         }));
                       },
-                      child: Container(
+                      child:
+                      Container(
                         width: 250,
                         height: 46,
                         decoration: BoxDecoration(

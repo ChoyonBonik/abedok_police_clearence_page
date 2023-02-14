@@ -1,5 +1,8 @@
 import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
+import 'image_upload_page.dart';
 
 class CountryScrollPage extends StatefulWidget {
   const CountryScrollPage({Key? key}) : super(key: key);
@@ -21,7 +24,6 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body: Stack(
         children: [
           Positioned(
@@ -79,6 +81,57 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
           ),
         ]
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        backgroundColor: Color(0xffbe047d),
+        child: Icon(Icons.arrow_forward),
+      )
+      // InkWell(
+      //   onTap: () {
+      //     Navigator.push(context, MaterialPageRoute(builder: (value){
+      //       return ImageUploadPage();
+      //     }));
+      //   },
+      //   child:
+      //   Container(
+      //     width: 100,
+      //     height: 46,
+      //     decoration: BoxDecoration(
+      //       borderRadius: BorderRadius.circular(6),
+      //       gradient: const LinearGradient(
+      //         begin: Alignment.topCenter,
+      //         end: Alignment.bottomCenter,
+      //         colors: [Color(0xffe90d65), Color(0xffac0087)],
+      //       ),
+      //       boxShadow: [
+      //         BoxShadow(
+      //           color: Colors.grey,
+      //           offset: const Offset(0.0, 1.0),
+      //           blurRadius: 6.0,
+      //         ),
+      //       ],
+      //     ),
+      //     child: Row(
+      //       mainAxisSize: MainAxisSize.min,
+      //       mainAxisAlignment: MainAxisAlignment.center,
+      //       crossAxisAlignment: CrossAxisAlignment.center,
+      //       children: [
+      //         AutoSizeText(
+      //           "Next",
+      //           textAlign: TextAlign.center,
+      //           textScaleFactor: textScaleFactor,
+      //           maxLines: 1,
+      //           overflow: TextOverflow.ellipsis,
+      //           style: TextStyle(
+      //             color: Colors.white,
+      //             fontSize: 16,
+      //             fontFamily: "Poppins SemiBold",
+      //           ),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
