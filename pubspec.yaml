@@ -39,6 +39,7 @@ dependencies:
   flutter_screenutil:
   auto_size_text:
   google_nav_bar:
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:

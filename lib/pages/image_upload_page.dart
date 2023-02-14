@@ -2,6 +2,7 @@ import 'package:abedok_police_clearence_page/pages/address_page.dart';
 import 'package:abedok_police_clearence_page/pages/home_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class ImageUploadPage extends StatefulWidget {
@@ -40,7 +41,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                 child: const Icon(
                   Icons.arrow_back_ios,
                   size: 15.0,
-                  color: Colors.pink,
+                  color: Color(0xffbe047d),
                 ),
               ),
             ),
@@ -444,6 +445,11 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         borderRadius: BorderRadius.circular(6.0)),
                     color: Colors.white,
                     child: Container(
+                      // decoration: BoxDecoration(
+                      //   image: DecorationImage(
+                      //     fit: BoxFit.contain,
+                      //       image: AssetImage('images/circle.jpg')),
+                      // ),
                       color: const Color.fromRGBO(242, 242, 242, 0.5),
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Row(
@@ -506,7 +512,286 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                   ),
                 ),
                 SizedBox(
-                  height: 66,
+                  height: 30,
+                ),
+                //Views.....................................................
+                SingleChildScrollView(
+                  padding: EdgeInsets.all(5.0),
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 5.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 60,
+                                bottom: 25,
+                              ),
+                              child: Text('Photo', style: TextStyle(
+                                  color: Color(0xffbe047d)
+                              )),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                    child: Icon(Icons.remove_red_eye, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.download, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.delete_forever, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 1.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 80,
+                                bottom: 25,
+                              ),
+                              child: Text('NID', style: TextStyle(
+                                  color: Color(0xffbe047d),
+                              )),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                    child: Icon(Icons.remove_red_eye, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.download, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.delete_forever, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 1.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 40,
+                                bottom: 25,
+                              ),
+                              child: Text('Passport', style: TextStyle(
+                                  color: Color(0xffbe047d),
+                              )),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                    child: Icon(Icons.remove_red_eye, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.download, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.delete_forever, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 1.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 80,
+                                bottom: 25,
+                              ),
+                              child: Text('B.C', style: TextStyle(
+                                  color: Color(0xffbe047d),
+                              )),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                    child: Icon(Icons.remove_red_eye, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.download, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.delete_forever, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        width: 130,
+                        height: 130,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.shade400,
+                              blurRadius: 1.0,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.white,
+                        ),
+
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 65,
+                                bottom: 25,
+                              ),
+                              child: Text('W.C.C', style: TextStyle(
+                                  color: Color(0xffbe047d),
+                              )),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                    child: Icon(Icons.remove_red_eye, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.download, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  ),
+                                  InkWell(
+                                    child: Icon(Icons.delete_forever, color: Color(0xffbe047d)),
+                                    onTap: (){},
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 90,
                 ),
                 //Button.....................................................
                 Center(

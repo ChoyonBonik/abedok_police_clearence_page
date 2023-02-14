@@ -24,117 +24,6 @@ class _DashboardPageState extends State<DashboardPage> {
     final alphanumeric =
         RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
     return Scaffold(
-      // AppBar(
-      //   flexibleSpace: Container(
-      //     decoration: BoxDecoration(
-      //       gradient: const LinearGradient(
-      //         begin: Alignment.topCenter,
-      //         end: Alignment.bottomCenter,
-      //         colors: [Color(0xffe90d65), Color(0xffac0087)],
-      //       ),
-      //     ),
-      //   ),
-      //   bottom: PreferredSize(
-      //     preferredSize: Size.fromHeight(50.0),
-      //     child: Container(
-      //       padding: EdgeInsets.only(left: 20, bottom: 3),
-      //       child: Row(
-      //         children: [
-      //           Stack(
-      //             children: [
-      //               CircleAvatar(
-      //                 radius: 28,
-      //                 backgroundColor: Colors.white,
-      //                 backgroundImage:
-      //                     AssetImage('images/appbar_circle_image.png'),
-      //               ),
-      //             ],
-      //           ),
-      //           Container(
-      //             margin: EdgeInsets.only(
-      //               left: 10,
-      //               top: 10,
-      //             ),
-      //             child: Row(
-      //               children: [
-      //                 Column(
-      //                   crossAxisAlignment: CrossAxisAlignment.start,
-      //                   children: [
-      //                     Text(
-      //                       'Khairul Islam',
-      //                       style: TextStyle(
-      //                           fontFamily: 'Poppins',
-      //                           fontSize: 16,
-      //                           fontWeight: FontWeight.w500,
-      //                           color: Colors.white),
-      //                     ),
-      //                     Row(
-      //                       children: [
-      //                         Text(
-      //                           '01746586222',
-      //                           style: TextStyle(
-      //                             fontFamily: 'Poppins',
-      //                             fontSize: 12,
-      //                             color: Colors.white,
-      //                             fontWeight: FontWeight.w500,
-      //                           ),
-      //                         ),
-      //                         IconButton(
-      //                             onPressed: () {},
-      //                             icon: Icon(
-      //                               Icons.keyboard_arrow_down_sharp,
-      //                               color: Colors.white,
-      //                               size: 30,
-      //                             ))
-      //                       ],
-      //                     ),
-      //                   ],
-      //                 ),
-      //                 SizedBox(
-      //                   width: 50,
-      //                 ),
-      //                 Padding(
-      //                   padding: const EdgeInsets.all(9.0),
-      //                   child: Row(
-      //                     children: [
-      //                       IconButton(
-      //                           onPressed: () {},
-      //                           icon: Icon(
-      //                             Icons.search,
-      //                             size: 30,
-      //                             color: Colors.white,
-      //                           )),
-      //                       IconButton(
-      //                           onPressed: () {},
-      //                           icon: Icon(
-      //                             Icons.notifications_none_rounded,
-      //                             color: Colors.white,
-      //                             size: 30,
-      //                           )),
-      //                     ],
-      //                   ),
-      //                 )
-      //               ],
-      //             ),
-      //           )
-      //         ],
-      //       ),
-      //     ),
-      //   ),
-      // ),
-      // AppBar(
-      //   flexibleSpace: Container(
-      //     decoration: BoxDecoration(
-      //   gradient: const LinearGradient(
-      //           begin: Alignment.topCenter,
-      //           end: Alignment.bottomCenter,
-      //           colors: [Color(0xffe90d65), Color(0xffac0087)],
-      //         ),
-      //     ),
-      //   ),
-      //   title: Center(child: Text('Dashboard Page')),
-      // ),
-
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.white,
@@ -142,13 +31,12 @@ class _DashboardPageState extends State<DashboardPage> {
           height: 40 / mockupWidth * width,
           width: 40 / mockupWidth * width,
           margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
-          child:
-          Card(
+          child: Card(
             elevation: 2,
             color: Colors.white,
             child: InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (value){
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (value) {
                   return HomePage();
                 }));
               },
@@ -181,9 +69,10 @@ class _DashboardPageState extends State<DashboardPage> {
             elevation: 0,
             color: Colors.white,
             child: InkWell(
-              onTap: (){},
+              onTap: () {},
               child: Container(
-                child: Image(image: AssetImage('images/ic_notification.png'),
+                child: Image(
+                  image: AssetImage('images/ic_notification.png'),
                   width: 40,
                   height: 40,
                 ),
@@ -253,7 +142,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -278,7 +167,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Full Name',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   var match = alphanumeric.hasMatch(text!);
@@ -299,7 +189,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -324,7 +214,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Fathers/Husband Name',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   var match = alphanumeric.hasMatch(text!);
@@ -400,7 +291,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -425,7 +316,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Mothers Name',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   var match = alphanumeric.hasMatch(text!);
@@ -446,7 +338,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -471,7 +363,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Email',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   if (!(text!.contains('@')) ||
@@ -481,8 +374,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   }
                   return null;
                 },
-                autovalidateMode:
-                AutovalidateMode.onUserInteraction,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               SizedBox(
                 height: 12.84,
@@ -492,7 +384,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -517,7 +409,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Mobile Number',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   if (text!.isEmpty) {
@@ -527,8 +420,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   }
                   return null;
                 },
-                autovalidateMode:
-                AutovalidateMode.onUserInteraction,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               SizedBox(
                 height: 12.84,
@@ -581,15 +473,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -599,7 +491,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                         Transform.rotate(
@@ -620,15 +512,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -638,7 +530,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                         Transform.rotate(
@@ -659,15 +551,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -677,7 +569,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                       ],
@@ -693,7 +585,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -718,7 +610,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'National ID No',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   if (text!.isEmpty) {
@@ -726,8 +619,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   }
                   return null;
                 },
-                autovalidateMode:
-                AutovalidateMode.onUserInteraction,
+                autovalidateMode: AutovalidateMode.onUserInteraction,
               ),
               SizedBox(
                 height: 12.84,
@@ -737,7 +629,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -762,7 +654,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Passport No',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   var match = alphanumeric.hasMatch(text!);
@@ -782,7 +675,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 keyboardType: TextInputType.name,
                 decoration: InputDecoration(
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
                   isDense: true,
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: inputBGStrokeColor),
@@ -807,7 +700,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   filled: false,
                   hoverColor: Colors.white,
                   hintText: 'Issuing Country',
-                  hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                  hintStyle:
+                      TextStyle(fontSize: 12, color: Colors.grey.shade400),
                 ),
                 validator: (text) {
                   var match = alphanumeric.hasMatch(text!);
@@ -862,15 +756,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -880,7 +774,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                         Transform.rotate(
@@ -901,15 +795,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -919,7 +813,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                         Transform.rotate(
@@ -940,15 +834,15 @@ class _DashboardPageState extends State<DashboardPage> {
                               isDense: true,
                               border: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               enabledBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusedBorder: const OutlineInputBorder(
                                 borderSide:
-                                BorderSide(color: Colors.transparent),
+                                    BorderSide(color: Colors.transparent),
                               ),
                               focusColor: Colors.white,
                               fillColor: textColorLight,
@@ -958,7 +852,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               hintStyle: TextStyle(fontSize: 12),
                             ),
                             autovalidateMode:
-                            AutovalidateMode.onUserInteraction,
+                                AutovalidateMode.onUserInteraction,
                           ),
                         ),
                       ],
@@ -1242,7 +1136,7 @@ class _DashboardPageState extends State<DashboardPage> {
               Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (value){
+                    Navigator.push(context, MaterialPageRoute(builder: (value) {
                       return AddressPage();
                     }));
                   },
