@@ -1,7 +1,6 @@
 import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
 
-
 class CountryScrollPage extends StatefulWidget {
   const CountryScrollPage({Key? key}) : super(key: key);
 
@@ -22,7 +21,7 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900,
+
       body: Stack(
         children: [
           Positioned(
@@ -36,10 +35,13 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
               child: Center(
                 child: Container(
                   height: 50,
-                  width: MediaQuery.of(context).size.width / 1.5,
+                  width: MediaQuery.of(context).size.width / 1.6,
                   decoration: BoxDecoration(
-                    color: Colors.blueGrey.shade800,
-                    borderRadius: BorderRadius.circular(6.0),
+                   border: Border.symmetric(
+                     horizontal: BorderSide(
+                       color: Colors.grey.withOpacity(0.2),
+                     )
+                   )
                   ),
                 ),
               ),
@@ -67,8 +69,8 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
                   builder: (context, index){
                     return WheelTile(
                         currentCountry == countries[index].names
-                            ? Colors.white
-                            : Colors.white24,
+                            ? Colors.black
+                            : Colors.black26,
                         countries[index].names!);
                   },
                 ),
@@ -290,11 +292,11 @@ class WheelTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        child: Text(countries,
+        child: Text(
+          countries,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             color: selectedColor,
-            fontWeight: FontWeight.bold,
           ),
         ),
       ),

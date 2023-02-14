@@ -524,7 +524,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         width: 130,
                         height: 130,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          image: DecorationImage(image: AssetImage('images/certificate.jpeg'), fit: BoxFit.cover, opacity: 180),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade400,
@@ -578,7 +578,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         width: 130,
                         height: 130,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          image: DecorationImage(image: AssetImage('images/certificate.jpeg'), fit: BoxFit.cover, opacity: 180),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade400,
@@ -632,7 +632,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         width: 130,
                         height: 130,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          image: DecorationImage(image: AssetImage('images/certificate.jpeg'), fit: BoxFit.cover, opacity: 180),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade400,
@@ -686,7 +686,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         width: 130,
                         height: 130,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          image: DecorationImage(image: AssetImage('images/certificate.jpeg'), fit: BoxFit.cover, opacity: 180),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade400,
@@ -740,7 +740,7 @@ class _ImageUploadPageState extends State<ImageUploadPage> {
                         width: 130,
                         height: 130,
                         decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/cer.jpeg'), fit: BoxFit.cover, opacity: 180),
+                          image: DecorationImage(image: AssetImage('images/certificate.jpeg'), fit: BoxFit.cover, opacity: 180),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade400,
