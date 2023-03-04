@@ -1,4 +1,5 @@
 import 'package:abedok_police_clearence_page/pages/address_page.dart';
+import 'package:abedok_police_clearence_page/pages/country_scroll_page.dart';
 import 'package:abedok_police_clearence_page/pages/home_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _DashboardPageState extends State<DashboardPage> {
             child: InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (value) {
-                  return HomePage();
+                  return CountryScrollPage();
                 }));
               },
               child: Container(
@@ -53,7 +54,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ),
         centerTitle: true,
         title: AutoSizeText(
-          "Dashboard Page",
+          "Personal information",
           maxLines: 1,
           textScaleFactor: textScaleFactor,
           overflow: TextOverflow.ellipsis,
