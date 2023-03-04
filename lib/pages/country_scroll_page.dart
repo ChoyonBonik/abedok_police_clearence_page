@@ -1,8 +1,7 @@
 import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
+import 'package:abedok_police_clearence_page/pages/home_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-
-import 'image_upload_page.dart';
 
 class CountryScrollPage extends StatefulWidget {
   const CountryScrollPage({Key? key}) : super(key: key);
@@ -21,11 +20,73 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
     super.initState();
     countries = allCountries();
   }
+
   @override
   Widget build(BuildContext context) {
+    const mockupWidth = 414;
+    final width = MediaQuery.of(context).size.width;
+    final textScaleFactor = width / mockupWidth;
     return Scaffold(
-      body: Stack(
-        children: [
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          leading: Container(
+            height: 40 / mockupWidth * width,
+            width: 40 / mockupWidth * width,
+            margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
+            child: Card(
+              elevation: 2,
+              color: Colors.white,
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context) {
+                      return HomePage();
+                    },
+                  ));
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(left: 5),
+                  child: const Icon(
+                    Icons.arrow_back_ios,
+                    size: 15.0,
+                    color: Colors.pink,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          centerTitle: true,
+          title: AutoSizeText(
+            "Where are you want to travelling ?",
+            maxLines: 1,
+            textScaleFactor: textScaleFactor,
+            overflow: TextOverflow.ellipsis,
+            style: const TextStyle(
+              color: Color(0xffbe047d),
+              fontSize: 17,
+              fontFamily: "Poppins SemiBold",
+            ),
+          ),
+          actions: [
+            Card(
+              margin: EdgeInsets.only(right: 20, top: 10, bottom: 10),
+              elevation: 0,
+              color: Colors.white,
+              child: InkWell(
+                onTap: () {},
+                child: Container(
+                  child: Image(
+                    image: AssetImage('images/ic_notification.png'),
+                    width: 40,
+                    height: 40,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        body: Stack(children: [
           Positioned(
             left: 0,
             right: 0,
@@ -39,12 +100,10 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
                   height: 50,
                   width: MediaQuery.of(context).size.width / 1.6,
                   decoration: BoxDecoration(
-                   border: Border.symmetric(
-                     horizontal: BorderSide(
-                       color: Colors.grey.withOpacity(0.2),
-                     )
-                   )
-                  ),
+                      border: Border.symmetric(
+                          horizontal: BorderSide(
+                    color: Colors.grey.withOpacity(0.2),
+                  ))),
                 ),
               ),
             ),
@@ -61,36 +120,42 @@ class _CountryScrollPageState extends State<CountryScrollPage> {
                 squeeze: 1.0,
                 useMagnifier: true,
                 magnification: 1.3,
-                onSelectedItemChanged: (index){
+                onSelectedItemChanged: (index) {
                   setState(() {
                     currentCountry = countries[index].names!;
                   });
                 },
                 childDelegate: ListWheelChildBuilderDelegate(
                   childCount: countries.length,
-                  builder: (context, index){
+                  builder: (context, index) {
                     return WheelTile(
                         currentCountry == countries[index].names
-                            ? Colors.black
-                            : Colors.black26,
+                            ? Color(0xffbe047d)
+                            : Colors.pink.shade100,
                         countries[index].names!);
                   },
                 ),
               ),
             ),
           ),
-        ]
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          print(currentCountry);
-        },
-        backgroundColor: Color(0xffbe047d),
-        child: Icon(Icons.arrow_forward),
-      )
-    );
+        ]),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return DashboardPage();
+                },
+              ),
+            );
+          },
+          backgroundColor: Color(0xffbe047d),
+          child: Icon(Icons.arrow_forward),
+        ));
   }
 }
+
 class Country {
   String? names;
   Country({
@@ -99,11 +164,13 @@ class Country {
   void setName(String getName) {
     names = getName;
   }
-  String getName(){
+
+  String getName() {
     return names!;
   }
 }
-List<Country> allCountries(){
+
+List<Country> allCountries() {
   List<Country> countries = [];
   Country countryModel = new Country();
 
@@ -287,15 +354,14 @@ List<Country> allCountries(){
   countries.add(countryModel);
   countryModel = new Country();
 
-
-
   return countries;
 }
+
 class WheelTile extends StatelessWidget {
   final String countries;
   final Color selectedColor;
-  const WheelTile(this.selectedColor, this.countries,
-      {Key? key}) : super(key: key);
+  const WheelTile(this.selectedColor, this.countries, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
