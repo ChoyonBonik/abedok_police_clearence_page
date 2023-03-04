@@ -1,8 +1,10 @@
 import 'package:abedok_police_clearence_page/pages/address_page.dart';
+import 'package:abedok_police_clearence_page/pages/country_scroll_page.dart';
 import 'package:abedok_police_clearence_page/pages/dashboard_page.dart';
 import 'package:abedok_police_clearence_page/pages/image_upload_page.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,12 +16,14 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    const mockupWidth = 414;
+    final width = MediaQuery.of(context).size.width;
+    final textScaleFactor = width / mockupWidth;
     bool is_checked = false;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
-        child:
-        AppBar(
+        child: AppBar(
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: const LinearGradient(
@@ -32,18 +36,36 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          leadingWidth: 70,
+          leadingWidth: 60,
           titleSpacing: 0,
           leading: Padding(
-            padding: const EdgeInsets.only(top:18, left: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('images/circle.jpg'),
+            padding: const EdgeInsets.only(top: 18, left: 5),
+            child: SleekCircularSlider(
+              appearance: CircularSliderAppearance(
+                counterClockwise: true,
+                startAngle: 270,
+                size: 50,
+                angleRange: 360,
+                customWidths: CustomSliderWidths(
+                  handlerSize: 5,
+                  progressBarWidth: 3,
                 ),
-              ],
+                customColors: CustomSliderColors(
+                  progressBarColor: Colors.green,
+                  dotColor: Colors.green,
+                ),
+              ),
+              min: 0,
+              max: 100,
+              initialValue: 60,
+              innerWidget: (percentage) {
+                return Center(
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage('images/circle.jpg'),
+                    radius: 17,
+                  ),
+                );
+              },
             ),
           ),
           title: Padding(
@@ -56,8 +78,9 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Khairul Inslam',
+                      'Khairul Islam',
                       style: TextStyle(
+                        fontFamily: 'Poppins-Regular.ttf',
                         fontSize: 13,
                         fontWeight: FontWeight.bold,
                       ),
@@ -67,6 +90,7 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           "01700000000",
                           style: TextStyle(
+                            fontFamily: 'Poppins-Regular.ttf',
                             fontSize: 11,
                           ),
                         ),
@@ -83,8 +107,11 @@ class _HomePageState extends State<HomePage> {
               padding: const EdgeInsets.all(20.0),
               child: Row(
                 children: [
-                  IconButton(icon: Icon(Icons.search_rounded), onPressed: () {}),
-                  IconButton(icon: Icon(Icons.notifications_none_outlined), onPressed: () {}),
+                  IconButton(
+                      icon: Icon(Icons.search_rounded), onPressed: () {}),
+                  IconButton(
+                      icon: Icon(Icons.notifications_none_outlined),
+                      onPressed: () {}),
                 ],
               ),
             )
@@ -107,7 +134,7 @@ class _HomePageState extends State<HomePage> {
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
-                blurRadius: 4.0,
+                blurRadius: 8.0,
               ),
             ],
           ),
@@ -115,12 +142,13 @@ class _HomePageState extends State<HomePage> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  right: 130,
-                  left: 130,
+                  right: 10,
+                  left: 10,
                   bottom: 15,
                   top: 23,
                 ),
-                child: Text('Purpose',
+                child: Text(
+                  'Hi! What’s the purpose of your PCC?',
                   style: TextStyle(
                     color: const Color(0xffbe047d),
                     fontFamily: "Poppins Medium",
@@ -131,97 +159,124 @@ class _HomePageState extends State<HomePage> {
                 height: 0.0,
                 color: Colors.grey.shade300,
                 thickness: 2,
-                endIndent: 10,
-                indent: 10,
               ),
               SizedBox(
                 height: 22,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    children: [
-                      Checkbox(value: is_checked, onChanged: (value) {}),
-                      Text('Abroad',
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: const Color.fromRGBO(142, 142, 143, 1),
-                          fontFamily: 'Roboto Regular',
-                        ),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 15),
-                    child: Row(
-                      children: [
-                        Checkbox(value: is_checked, onChanged: (value) {}),
-                        Text('Other',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: const Color.fromRGBO(142, 142, 143, 1),
-                            fontFamily: 'Roboto Regular',
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 20,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return CountryScrollPage();
+                            },
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (value){
-                    return DashboardPage();
-                  }));
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                    ),
-                    gradient: const LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [Color(0xffe90d65), Color(0xffac0087)],
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey,
-                        offset: const Offset(0.0, 1.0), //(x,y)
-                        blurRadius: 6.0,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      AutoSizeText(
-                        "Next",
-                        textAlign: TextAlign.center,
-                        //textScaleFactor: textScaleFactor,
-                        // style: bodyRobotoTextStyle,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: "Poppins SemiBold",
+                        );
+                      },
+                      child: Container(
+                        width: 100,
+                        height: 46,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0xffe90d65), Color(0xffac0087)],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: const Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 6.0,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "Abroad",
+                              textAlign: TextAlign.center,
+                              textScaleFactor: textScaleFactor,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: "Poppins SemiBold",
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                                  content: Text(
+                                      'Please contact your nearest Police Station',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Color(0xffac0087),
+                                      )),
+                                  contentPadding: EdgeInsets.all(40),
+                                ));
+                      },
+                      child: Container(
+                        width: 100,
+                        height: 46,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          gradient: const LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [Color(0xffe90d65), Color(0xffac0087)],
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey,
+                              offset: const Offset(0.0, 1.0), //(x,y)
+                              blurRadius: 6.0,
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            AutoSizeText(
+                              "Others",
+                              textAlign: TextAlign.center,
+                              textScaleFactor: textScaleFactor,
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontFamily: "Poppins SemiBold",
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
