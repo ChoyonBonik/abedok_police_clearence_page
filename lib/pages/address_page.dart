@@ -19,7 +19,8 @@ class _AddressPageState extends State<AddressPage> {
     const inputBGStrokeColor = Color.fromRGBO(223, 223, 223, 1);
     final width = MediaQuery.of(context).size.width;
     final textScaleFactor = width / mockupWidth;
-    final alphanumeric = RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
+    final alphanumeric =
+        RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -28,13 +29,12 @@ class _AddressPageState extends State<AddressPage> {
           height: 40 / mockupWidth * width,
           width: 40 / mockupWidth * width,
           margin: const EdgeInsets.only(left: 20, top: 10, bottom: 10),
-          child:
-          Card(
+          child: Card(
             elevation: 2,
             color: Colors.white,
             child: InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (value){
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (value) {
                   return DashboardPage();
                 }));
               },
@@ -51,7 +51,7 @@ class _AddressPageState extends State<AddressPage> {
         ),
         centerTitle: true,
         title: AutoSizeText(
-          "Address Page",
+          "Address",
           maxLines: 1,
           textScaleFactor: textScaleFactor,
           overflow: TextOverflow.ellipsis,
@@ -67,9 +67,10 @@ class _AddressPageState extends State<AddressPage> {
             elevation: 0,
             color: Colors.white,
             child: InkWell(
-              onTap: (){},
+              onTap: () {},
               child: Container(
-                child: Image(image: AssetImage('images/ic_notification.png'),
+                child: Image(
+                  image: AssetImage('images/ic_notification.png'),
                   width: 40,
                   height: 40,
                 ),
@@ -135,12 +136,17 @@ class _AddressPageState extends State<AddressPage> {
               child: Column(
                 children: [
                   //Emergency Contact............................................
-                  Text(
-                    "Emergency Contact (As Per Passport)",
-                    style: TextStyle(
-                      color: const Color(0xffbe047d),
-                      fontSize: 14,
-                      fontFamily: "Poppins Medium",
+                  Padding(
+                    padding: EdgeInsets.only(
+                      right: 85,
+                    ),
+                    child: Text(
+                      "Emergency Contact (As Per Passport)",
+                      style: TextStyle(
+                        color: const Color(0xffbe047d),
+                        fontSize: 12,
+                        fontFamily: "Poppins Medium",
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -222,7 +228,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -359,7 +366,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -492,7 +500,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -629,7 +638,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12,color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -762,7 +772,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Village/Town/Road/House/Flat',
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     // validator: (text) {
                     //   var match = alphanumeric.hasMatch(text!);
@@ -899,7 +910,8 @@ class _AddressPageState extends State<AddressPage> {
                       filled: false,
                       hoverColor: Colors.white,
                       hintText: 'Postal Code',
-                      hintStyle: TextStyle(fontSize: 12, color: Colors.grey.shade400),
+                      hintStyle:
+                          TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     ),
                     validator: (text) {
                       var match = alphanumeric.hasMatch(text!);
@@ -1008,15 +1020,14 @@ class _AddressPageState extends State<AddressPage> {
                   ),
                   //Button........................................................
                   Center(
-                    child:
-                    InkWell(
+                    child: InkWell(
                       onTap: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (value){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (value) {
                           return ImageUploadPage();
                         }));
                       },
-                      child:
-                      Container(
+                      child: Container(
                         width: 250,
                         height: 46,
                         decoration: BoxDecoration(
